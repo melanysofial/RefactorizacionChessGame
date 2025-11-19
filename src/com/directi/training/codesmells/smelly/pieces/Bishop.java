@@ -1,0 +1,25 @@
+package com.directi.training.codesmells.smelly.pieces;
+
+import com.directi.training.codesmells.smelly.Color;
+import com.directi.training.codesmells.smelly.Position;
+
+public class Bishop extends Piece
+{
+    public Bishop(Color color)
+    {
+        super(color);
+    }
+
+    // Refactorización #4
+    @Override
+    public boolean isValidMove(Position from, Position to)
+    {
+        return Math.abs(from.getRow() - to.getRow()) == Math.abs(from.getColumn() - to.getColumn());
+    }
+
+    @Override
+    public String toString()
+    {
+        return "b";
+    }
+}
